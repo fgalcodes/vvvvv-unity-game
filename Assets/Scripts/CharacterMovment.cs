@@ -60,12 +60,19 @@ public class CharacterMovment : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) && extraJumps > 0)
         {
-            rb.velocity = Vector2.up * jumpForce;
+            if (top == false)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+            }
+                
+            if (top == true) rb.velocity = Vector2.down * -jumpForce;   
+            
             extraJumps--;
         }
         else if (Input.GetKeyDown(KeyCode.W) && extraJumps == 0 && isGrounded == true)
         {
-            rb.velocity = Vector2.up * jumpForce;
+            if (top == false) rb.velocity = Vector2.up * jumpForce;
+            if (top == true) rb.velocity = Vector2.down * -jumpForce;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
