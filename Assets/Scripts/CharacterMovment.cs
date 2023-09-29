@@ -7,8 +7,10 @@ public class CharacterMovment : MonoBehaviour
 {
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpForce = 10f;
+
     public float moveInput;
     private bool facingRight = true;
+    private bool top = true;
 
     private Rigidbody2D rb;
 
@@ -65,6 +67,13 @@ public class CharacterMovment : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpForce;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.gravityScale *= -1;
+            Rotation();
+        }
+
     }
 
     void Flip()
@@ -76,5 +85,19 @@ public class CharacterMovment : MonoBehaviour
         Scaler.x *= -1;
         transform.localScale = Scaler;
 
+    }
+    private void Rotation()
+    {
+        if (top == false)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 180f);
+        }
+        else
+        {
+            transform.eulerAngles = Vector3.zero;
+        }
+
+        facingRight = !facingRight;
+        top = !top;
     }
 }
