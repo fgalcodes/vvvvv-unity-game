@@ -19,6 +19,9 @@ public class CharacterMovment : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
+
+    private int flips;
+
     private int extraJumps;
     [SerializeField] private int extraJumpsValue = 2;
 
@@ -106,5 +109,13 @@ public class CharacterMovment : MonoBehaviour
 
         facingRight = !facingRight;
         top = !top;
+    }
+
+    private void CheckFlips()
+    {
+        if (transform.rotation.z == 360)
+        {
+            Debug.Log("Its me MArio");
+        }
     }
 }
