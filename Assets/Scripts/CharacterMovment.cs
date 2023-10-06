@@ -37,9 +37,8 @@ public class CharacterMovment : MonoBehaviour
     {
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-
         moveInput = Input.GetAxisRaw("Horizontal");
-        Debug.Log(moveInput);
+
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
         if (facingRight == false && moveInput > 0)
@@ -59,9 +58,10 @@ public class CharacterMovment : MonoBehaviour
         if (isGrounded == true)
         {
             extraJumps = extraJumpsValue;
+            transform.rotation = Quaternion.identity; 
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && extraJumps > 0)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && extraJumps > 0)
         {
             if (top == false)
             {
@@ -72,7 +72,7 @@ public class CharacterMovment : MonoBehaviour
             
             extraJumps--;
         }
-        else if (Input.GetKeyDown(KeyCode.W) && extraJumps == 0 && isGrounded == true)
+        else if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && extraJumps == 0 && isGrounded == true)
         {
             if (top == false) rb.velocity = Vector2.up * jumpForce;
             if (top == true) rb.velocity = Vector2.down * -jumpForce;
@@ -98,7 +98,7 @@ public class CharacterMovment : MonoBehaviour
     }
     private void Rotation()
     {
-        if (top == false)
+        if (!top)
         {
             transform.eulerAngles = new Vector3(0, 0, 180f);
         }
@@ -107,7 +107,7 @@ public class CharacterMovment : MonoBehaviour
             transform.eulerAngles = Vector3.zero;
         }
 
-        facingRight = !facingRight;
+        //facingRight = !facingRight;
         top = !top;
     }
 
@@ -115,7 +115,12 @@ public class CharacterMovment : MonoBehaviour
     {
         if (transform.rotation.z == 360)
         {
-            Debug.Log("Its me MArio");
+            Debug.Log("Flip!");
         }
+    }
+
+    private void CheckIsGrounded()
+    {
+
     }
 }
