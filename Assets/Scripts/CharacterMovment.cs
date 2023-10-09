@@ -43,10 +43,12 @@ public class CharacterMovment : MonoBehaviour
 
         if (facingRight == false && moveInput > 0)
         {
+            Debug.Log("Derecha: " + facingRight);
             Flip();
         }
         if (facingRight ==  true && moveInput < 0)
         {
+            Debug.Log("Derecha: " + facingRight);
             Flip();
         }
 
@@ -80,6 +82,7 @@ public class CharacterMovment : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("Space: " + Input.GetKeyDown(KeyCode.Space));
             rb.gravityScale *= -1;
             Rotation();
         }

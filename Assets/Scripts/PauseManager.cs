@@ -27,6 +27,7 @@ public class PauseManager : MonoBehaviour
         {
             Time.timeScale = 0; // Freeze game time
             pausePanel.SetActive(true); // Show the pause UI panel
+
         }
         else
         {
