@@ -7,7 +7,7 @@ public class EnemyBullet : MonoBehaviour
     private Rigidbody2D _rb;
     private float _timer;
 
-    public float force;
+    [SerializeField] private float force = 5;
     
     // Start is called before the first frame update
     void Start()
