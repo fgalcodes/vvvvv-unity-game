@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovment : MonoBehaviour
 {
@@ -9,54 +8,46 @@ public class CharacterMovment : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
 
     public float moveInput;
-    private bool facingRight = true;
-    private bool facingUp = false;
-    private bool top = true;
+    private bool _facingRight = true;
+    private bool _facingUp;
+    private bool _top = true;
 
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
 
-    private bool isGrounded;
+    private bool _isGrounded;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
 
 
-    private int extraJumps;
+    private int _extraJumps;
     [SerializeField] private int extraJumpsValue = 2;
 
-
-    // trying Flip detection
-
-    private Quaternion initialRotation;
-    private bool hasFlipped = false;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        extraJumps = extraJumpsValue;
-        rb = GetComponent<Rigidbody2D>();
-
-        initialRotation = rb.transform.rotation;
-
+        _extraJumps = extraJumpsValue;
+        _rb = GetComponent<Rigidbody2D>();
+        
     }
 
     private void FixedUpdate()
     {
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        _isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        _rb.velocity = new Vector2(moveInput * speed, _rb.velocity.y);
 
-        if (facingRight == false && moveInput > 0)
+        if (_facingRight == false && moveInput > 0)
         {
-            Debug.Log("Derecha: " + facingRight);
+            Debug.Log("Derecha: " + _facingRight);
             FlipHorizontally();
         }
-        if (facingRight ==  true && moveInput < 0)
+        if (_facingRight && moveInput < 0)
         {
-            Debug.Log("Derecha: " + facingRight);
+            Debug.Log("Derecha: " + _facingRight);
             FlipHorizontally();
         }
 
@@ -67,72 +58,64 @@ public class CharacterMovment : MonoBehaviour
     {
         //Debug.Log(transform.eulerAngles.z.ToString());
 
-        if (isGrounded == true)
+        if (_isGrounded)
         {
-            extraJumps = extraJumpsValue;
+            _extraJumps = extraJumpsValue;
             transform.rotation = Quaternion.identity; 
         }
 
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && extraJumps > 0)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps > 0)
         {
-            if (top == false)
+            if (_top == false)
             {
-                rb.velocity = Vector2.up * jumpForce;
+                _rb.velocity = Vector2.up * jumpForce;
             }
                 
-            if (top == true) rb.velocity = Vector2.down * -jumpForce;   
+            if (_top) _rb.velocity = Vector2.down * -jumpForce;   
             
-            extraJumps--;
+            _extraJumps--;
         }
-        else if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && extraJumps == 0 && isGrounded == true)
+        else if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps == 0 && _isGrounded)
         {
-            if (top == false) rb.velocity = Vector2.up * jumpForce;
-            if (top == true) rb.velocity = Vector2.down * -jumpForce;
+            if (_top == false) _rb.velocity = Vector2.up * jumpForce;
+            if (_top) _rb.velocity = Vector2.down * -jumpForce;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            rb.gravityScale *= -1;
+            _rb.gravityScale *= -1;
             FlipVertically();
         }
-
-        // Check if the player's object has completed a full 360-degree rotation around the z-axis
-        if (transform.eulerAngles.z <= -360 || transform.eulerAngles.z >= 360)
-        {
-            Debug.Log("Player has completed a 360-degree flip!");
-        }
-        //    if (!hasFlipped)
-        //    {
-        //        // The player has completed a 360-degree flip, run your script here
-        //        Debug.Log("Player has completed a 360-degree flip!");
-
-        //        // You can add your script logic here
-
-        //        // Set hasFlipped to true to prevent the script from running repeatedly
-        //        hasFlipped = true;
-        //    }
-        //}
-        //else
-        //{
-        //    // Reset hasFlipped if the rotation is not greater than or equal to 360 degrees
-        //    hasFlipped = false;
-        //}
+        
     }
 
     void FlipHorizontally()
     {
-        facingRight = !facingRight;
-        Vector3 Scaler = rb.transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
+        _facingRight = !_facingRight;
+        Vector3 scaler = _rb.transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
 
     }
     void FlipVertically()
     {
-        facingUp = !facingUp;
-        Vector3 Scaler = rb.transform.localScale;
-        Scaler.y *= -1;
-        transform.localScale = Scaler;
+        _facingUp = !_facingUp;
+        Vector3 scaler = _rb.transform.localScale;
+        scaler.y *= -1;
+        transform.localScale = scaler;
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.tag)
+        {
+            case "NextLevel":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                break;
+            case "PreviousLevel":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+                break;
+        }
     }
 }
