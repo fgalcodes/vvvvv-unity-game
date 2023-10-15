@@ -6,22 +6,31 @@ public class EnemyShooting : MonoBehaviour
     public Transform bulletPos;
 
     private float _timer;
+    private GameObject _player;
+
+    [SerializeField] private float bulletRange = 14;
     
     // Start is called before the first frame update
     void Start()
     {
-            
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        _timer += Time.deltaTime;
-
-        if (_timer > 2)
+        float distance = Vector2.Distance(transform.position, _player.transform.position);
+        Debug.Log(distance);
+        
+        if (distance < bulletRange)
         {
-            _timer = 0;
-            Shoot();
+            _timer += Time.deltaTime;
+
+            if (_timer > 2)
+            {
+                _timer = 0;
+                Shoot();
+            }
         }
     }
 
