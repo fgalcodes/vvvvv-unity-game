@@ -115,6 +115,10 @@ public class CharacterMovment : MonoBehaviour
             case "PreviousLevel":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
                 break;
+            case "Bullet":
+                Destroy(gameObject);
+                SceneManager.LoadScene(0);
+                break;
         }
     }
 }
