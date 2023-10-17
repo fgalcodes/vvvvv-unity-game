@@ -18,6 +18,7 @@ public class CharacterMovment : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
+    private int _currentLevel;
 
     private int _extraJumps;
     [SerializeField] private int extraJumpsValue = 2;
@@ -116,9 +117,16 @@ public class CharacterMovment : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
                 break;
             case "Bullet":
-                Destroy(gameObject);
-                SceneManager.LoadScene(0);
+                _currentLevel = SceneManager.GetActiveScene().buildIndex;
+                StaticData.currentLevel = _currentLevel;
+                LoadGameOver();
                 break;
         }
+    }
+
+    void LoadGameOver()
+    {
+        Destroy(gameObject);
+        SceneManager.LoadScene(0);
     }
 }
