@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CharacterMovment : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpForce = 10f;
@@ -22,14 +22,13 @@ public class CharacterMovment : MonoBehaviour
 
     private int _extraJumps;
     [SerializeField] private int extraJumpsValue = 2;
-
     
     // Start is called before the first frame update
     void Start()
     {
         _extraJumps = extraJumpsValue;
         _rb = GetComponent<Rigidbody2D>();
-        
+
     }
 
     private void FixedUpdate()
@@ -42,26 +41,22 @@ public class CharacterMovment : MonoBehaviour
 
         if (_facingRight == false && moveInput > 0)
         {
-            Debug.Log("Derecha: " + _facingRight);
             FlipHorizontally();
         }
         if (_facingRight && moveInput < 0)
         {
-            Debug.Log("Derecha: " + _facingRight);
             FlipHorizontally();
         }
-
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(transform.eulerAngles.z.ToString());
-
         if (_isGrounded)
         {
             _extraJumps = extraJumpsValue;
-            transform.rotation = Quaternion.identity; 
+            transform.rotation = Quaternion.identity;
         }
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps > 0)
@@ -86,7 +81,6 @@ public class CharacterMovment : MonoBehaviour
             _rb.gravityScale *= -1;
             FlipVertically();
         }
-        
     }
 
     void FlipHorizontally()
@@ -118,7 +112,7 @@ public class CharacterMovment : MonoBehaviour
                 break;
             case "Bullet":
                 _currentLevel = SceneManager.GetActiveScene().buildIndex;
-                StaticData.currentLevel = _currentLevel;
+                StaticData.CurrentLevel = _currentLevel;
                 LoadGameOver();
                 break;
         }

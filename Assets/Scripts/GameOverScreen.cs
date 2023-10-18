@@ -5,7 +5,7 @@ public class GameOverScreen : MonoBehaviour
 {
     public void TryAgainGame()
     {
-        SceneManager.LoadScene(StaticData.currentLevel);
+        SceneManager.LoadScene(StaticData.CurrentLevel);
     }
 
     public void RestartGame()

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NextLevel
   - PreviousLevel
+  - Bullet
   layers:
   - Default
   - TransparentFX

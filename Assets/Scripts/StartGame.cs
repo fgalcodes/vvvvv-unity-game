@@ -7,4 +7,9 @@ public class StartGame : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }
