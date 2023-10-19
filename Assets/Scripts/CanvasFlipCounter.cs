@@ -1,30 +1,21 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CanvasFlipCounter : MonoBehaviour
 {
-    //public GameObject counter;
     public Text counterFlip;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController.isFlipping)
+        if (PlayerController.IsFlipping)
         {
-            counterFlip.text = Convert.ToString(PlayerController.contadorFlips);
-
-            if (PlayerController.contadorFlips > StaticData.highFlipScore)
+            counterFlip.text = "Flip X" + Convert.ToString(PlayerController.ContadorFlips);
+            
+            if (PlayerController.ContadorFlips > StaticData.HighFlipScore)
             {
-                StaticData.highFlipScore = PlayerController.contadorFlips;
+                StaticData.HighFlipScore = PlayerController.ContadorFlips;
             }
 
         }

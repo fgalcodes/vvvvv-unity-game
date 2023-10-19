@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
 
 
     // Contador de flips
-    public static bool isFlipping = false;
-    public static int contadorFlips = 0;
+    public static bool IsFlipping;
+    public static int ContadorFlips;
 
     // Start is called before the first frame update
     void Start()
@@ -62,11 +62,11 @@ public class PlayerController : MonoBehaviour
         {
             _extraJumps = extraJumpsValue;
             transform.rotation = Quaternion.identity;
-            contadorFlips = 0;
-            isFlipping = false;
+            ContadorFlips = 0;
+            IsFlipping = false;
         } else
         {
-            isFlipping = true;
+            IsFlipping = true;
             FlipCounter();
         }
 
@@ -146,10 +146,12 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(currentRotation);
         if (currentRotation >= 0.9)
         {
-            transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0f));
-            contadorFlips++;
+            var rotation = transform.rotation;
+            rotation = Quaternion.Euler(new Vector3(rotation.x, rotation.y, 0f));
+            transform.rotation = rotation;
+            ContadorFlips++;
 
-            Debug.Log(contadorFlips);
+            Debug.Log(ContadorFlips);
         }
     }
 }

@@ -10,20 +10,20 @@ public class CanvasHighScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        highScore.text = Convert.ToString(StaticData.highFlipScore);
+        highScore.text = Convert.ToString(StaticData.HighFlipScore);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!PlayerController.isFlipping)
+        if (!PlayerController.IsFlipping)
         {
-            highScore.text = Convert.ToString(StaticData.highFlipScore);
+            highScore.text = Convert.ToString(StaticData.HighFlipScore);
 
         }
         if (StaticData.GameOver)
         {
-            StaticData.highFlipScore = 0;
+            StaticData.HighFlipScore = 0;
         }
     }
 }
