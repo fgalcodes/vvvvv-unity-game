@@ -22,7 +22,12 @@ public class PlayerController : MonoBehaviour
 
     private int _extraJumps;
     [SerializeField] private int extraJumpsValue = 2;
-    
+
+
+    // Contador de flips
+    public static bool isFlipping = false;
+    public static int contadorFlips = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +62,12 @@ public class PlayerController : MonoBehaviour
         {
             _extraJumps = extraJumpsValue;
             transform.rotation = Quaternion.identity;
+            contadorFlips = 0;
+            isFlipping = false;
+        } else
+        {
+            isFlipping = true;
+            FlipCounter();
         }
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps > 0)
@@ -70,7 +81,8 @@ public class PlayerController : MonoBehaviour
             
             _extraJumps--;
         }
-        else if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps == 0 && _isGrounded)
+
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps == 0 && _isGrounded)
         {
             if (_top == false) _rb.velocity = Vector2.up * jumpForce;
             if (_top) _rb.velocity = Vector2.down * -jumpForce;
@@ -81,6 +93,7 @@ public class PlayerController : MonoBehaviour
             _rb.gravityScale *= -1;
             FlipVertically();
         }
+
     }
 
     void FlipHorizontally()
@@ -122,5 +135,20 @@ public class PlayerController : MonoBehaviour
     {
         Destroy(gameObject);
         SceneManager.LoadScene(0);
+    }
+
+    public void FlipCounter()
+    {
+        // Flips
+        float currentRotation = transform.rotation.z;
+        if (currentRotation < 0) currentRotation *= -1;
+        //Debug.Log(currentRotation);
+        if (currentRotation >= 0.9)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0f));
+            contadorFlips++;
+
+            Debug.Log(contadorFlips);
+        }
     }
 }

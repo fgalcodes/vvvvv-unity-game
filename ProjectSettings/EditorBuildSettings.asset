@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/The Good 2.unity
     guid: 424964a33cf060c4eab8c9489640da68
+  - enabled: 1
+    path: Assets/Scenes/The Good 3.unity
+    guid: 820d624df9a89d4468d7f8ca31d66deb
   m_configObjects: {}

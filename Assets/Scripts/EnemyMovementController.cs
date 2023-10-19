@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
 
-public class EnemyMovmentController : MonoBehaviour
+public class EnemyMovementController : MonoBehaviour
 {
     public Transform enemy;
     public Transform startPosition;
