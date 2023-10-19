@@ -134,6 +134,7 @@ public class PlayerController : MonoBehaviour
     void LoadGameOver()
     {
         Destroy(gameObject);
+        StaticData.GameOver = true;
         SceneManager.LoadScene(0);
     }
 

@@ -5,6 +5,7 @@ public class GameOverScreen : MonoBehaviour
 {
     public void TryAgainGame()
     {
+        StaticData.GameOver = false;
         SceneManager.LoadScene(StaticData.CurrentLevel);
     }
 

@@ -10,7 +10,7 @@ public class CanvasHighScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        highScore.text = Convert.ToString(StaticData.highFlipScore);
     }
 
     // Update is called once per frame
@@ -20,6 +20,10 @@ public class CanvasHighScore : MonoBehaviour
         {
             highScore.text = Convert.ToString(StaticData.highFlipScore);
 
+        }
+        if (StaticData.GameOver)
+        {
+            StaticData.highFlipScore = 0;
         }
     }
 }
