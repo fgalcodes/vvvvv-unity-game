@@ -11,7 +11,7 @@ public class CanvasFlipCounter : MonoBehaviour
     {
         if (PlayerController.IsFlipping)
         {
-            counterFlip.text = "Flip X" + Convert.ToString(PlayerController.ContadorFlips);
+            counterFlip.text = "Flip x" + Convert.ToString(PlayerController.ContadorFlips);
             
             if (PlayerController.ContadorFlips > StaticData.HighFlipScore)
             {

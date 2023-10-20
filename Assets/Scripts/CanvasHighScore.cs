@@ -6,7 +6,7 @@ public class CanvasHighScore : MonoBehaviour
 {
     //public GameObject counter;
     public Text highScore;
-
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,6 @@ public class CanvasHighScore : MonoBehaviour
         if (!PlayerController.IsFlipping)
         {
             highScore.text = Convert.ToString(StaticData.HighFlipScore);
-
         }
         if (StaticData.GameOver)
         {

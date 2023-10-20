@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D _rb;
 
-    private bool _isGrounded;
+    public static bool _isGrounded;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
