@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
@@ -36,7 +35,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("Player"))
+        if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }

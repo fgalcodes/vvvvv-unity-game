@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D _rb;
 
-    public static bool _isGrounded;
+    public static bool IsGrounded;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
@@ -21,17 +21,17 @@ public class PlayerController : MonoBehaviour
     private int _currentLevel;
 
     private int _extraJumps;
-    [SerializeField] private int extraJumpsValue = 2;
+    private int _extraJumpsValue = 2;
 
 
-    // Contador de flips
+    // Counter de flips
     public static bool IsFlipping;
-    public static int ContadorFlips;
+    public static int CounterFlips;
 
     // Start is called before the first frame update
     void Start()
     {
-        _extraJumps = extraJumpsValue;
+        _extraJumps = _extraJumpsValue;
         _rb = GetComponent<Rigidbody2D>();
 
     }
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        _isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        IsGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         moveInput = Input.GetAxisRaw("Horizontal");
 
         _rb.velocity = new Vector2(moveInput * speed, _rb.velocity.y);
@@ -58,11 +58,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_isGrounded)
+        if (IsGrounded)
         {
-            _extraJumps = extraJumpsValue;
+            _extraJumps = _extraJumpsValue;
             transform.rotation = Quaternion.identity;
-            ContadorFlips = 0;
+            CounterFlips = 0;
             IsFlipping = false;
         } else
         {
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             _extraJumps--;
         }
 
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps == 0 && _isGrounded)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps == 0 && IsGrounded)
         {
             if (_top == false) _rb.velocity = Vector2.up * jumpForce;
             if (_top) _rb.velocity = Vector2.down * -jumpForce;
@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
                 break;
             case "Bullet":
+            // case "Enemy":
                 _currentLevel = SceneManager.GetActiveScene().buildIndex;
                 StaticData.CurrentLevel = _currentLevel;
                 LoadGameOver();
@@ -143,15 +144,16 @@ public class PlayerController : MonoBehaviour
         // Flips
         float currentRotation = transform.rotation.z;
         if (currentRotation < 0) currentRotation *= -1;
+        
         //Debug.Log(currentRotation);
         if (currentRotation >= 0.9)
         {
             var rotation = transform.rotation;
             rotation = Quaternion.Euler(new Vector3(rotation.x, rotation.y, 0f));
             transform.rotation = rotation;
-            ContadorFlips++;
+            CounterFlips++;
 
-            Debug.Log(ContadorFlips);
+            // Debug.Log(CounterFlips);
         }
     }
 }
