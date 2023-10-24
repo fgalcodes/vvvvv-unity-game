@@ -4891,7 +4891,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  extraJumpsValue: 1
 --- !u!61 &1305858974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6676,7 +6675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7112448612161590892, guid: b3a218e42c6bdd34088ac4702aeb3e55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.026517
+      value: -15.41
       objectReference: {fileID: 0}
     - target: {fileID: 7112448612161590892, guid: b3a218e42c6bdd34088ac4702aeb3e55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8274,7 +8273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6013625389696360169, guid: 43e9676a94ed18742bd4fa5452567386, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.96
+      value: -15.441
       objectReference: {fileID: 0}
     - target: {fileID: 6013625389696360169, guid: 43e9676a94ed18742bd4fa5452567386, type: 3}
       propertyPath: m_LocalPosition.z
