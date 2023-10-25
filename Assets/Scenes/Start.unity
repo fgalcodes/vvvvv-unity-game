@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1587ba49233193347a00321ee44a84fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundNewGame: {fileID: 0}
+  soundNewGame: {fileID: 0}
 --- !u!114 &239997269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1587ba49233193347a00321ee44a84fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundNewGame: {fileID: 1276853327}
+  soundNewGame: {fileID: 1276853327}
 --- !u!82 &1276853327
 AudioSource:
   m_ObjectHideFlags: 0

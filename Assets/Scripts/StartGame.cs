@@ -8,13 +8,19 @@ public class StartGame : MonoBehaviour
     public void NewGame()
     {
         soundNewGame.Play();
-
-        StaticData.GameOver = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
+        // call the function after 2s
+        Invoke("LoadScene", .5f);
     }
 
     public void CloseGame()
     {
         Application.Quit();
+    }
+
+    private void LoadScene()
+    {
+        StaticData.GameOver = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

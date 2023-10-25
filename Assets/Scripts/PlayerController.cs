@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpForce = 10f;
+    [SerializeField] AudioSource deathFX;
     private int specialFlipAttack = 1;
 
     public float moveInput;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
     private static readonly int IsJumping = Animator.StringToHash("isJumping");
     private static readonly int SetDeath = Animator.StringToHash("setDeath");
+    private static readonly int SetDeathAir = Animator.StringToHash("setDeathAir");
 
     // Start is called before the first frame update
     void Start()
@@ -141,6 +143,8 @@ public class PlayerController : MonoBehaviour
                 break;
             case "Bullet":
             case "Enemy":
+                deathFX.Play();
+                
                 _currentLevel = SceneManager.GetActiveScene().buildIndex;
                 StaticData.CurrentLevel = _currentLevel;
 
@@ -152,8 +156,8 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Destroy(gameObject);
-                    LoadGameOver();
+                    _rb.bodyType = RigidbodyType2D.Static;
+                    _anim.SetTrigger(SetDeathAir);
                 }
                 // LoadGameOver();
                 break;
