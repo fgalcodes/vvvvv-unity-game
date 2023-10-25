@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
                 break;
             case "Bullet":
-            // case "Enemy":
+            case "Enemy":
                 _currentLevel = SceneManager.GetActiveScene().buildIndex;
                 StaticData.CurrentLevel = _currentLevel;
                 LoadGameOver();
