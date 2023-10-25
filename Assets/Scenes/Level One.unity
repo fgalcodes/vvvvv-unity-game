@@ -303,6 +303,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1850206267653471743, guid: 06b26e44b544e4348b25718a8642dc0a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850206267653471743, guid: 06b26e44b544e4348b25718a8642dc0a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304759771271876051, guid: 06b26e44b544e4348b25718a8642dc0a, type: 3}
+      propertyPath: soundFx.Array.data[1]
+      value: 
+      objectReference: {fileID: 1951533776}
+    - target: {fileID: 3970725875179991225, guid: 06b26e44b544e4348b25718a8642dc0a, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8990840455319031417, guid: 06b26e44b544e4348b25718a8642dc0a, type: 3}
       propertyPath: m_Size.x
       value: 0.625
@@ -1011,6 +1027,11 @@ Transform:
 --- !u!4 &1951533769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 118693082736147900, guid: 06b26e44b544e4348b25718a8642dc0a, type: 3}
+  m_PrefabInstance: {fileID: 87571651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1951533776 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3970725875179991225, guid: 06b26e44b544e4348b25718a8642dc0a, type: 3}
   m_PrefabInstance: {fileID: 87571651}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2022187021
