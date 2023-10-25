@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpForce = 10f;
-    [SerializeField] AudioSource deathFX;
+    [SerializeField] private AudioSource[] soundFx = new AudioSource[4];
     private int specialFlipAttack = 1;
 
     public float moveInput;
@@ -136,6 +136,7 @@ public class PlayerController : MonoBehaviour
         switch (collision.tag)
         {
             case "NextLevel":
+                // soundFx[1].Play();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 break;
             case "PreviousLevel":
@@ -143,7 +144,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case "Bullet":
             case "Enemy":
-                deathFX.Play();
+                soundFx[0].Play();
                 
                 _currentLevel = SceneManager.GetActiveScene().buildIndex;
                 StaticData.CurrentLevel = _currentLevel;
