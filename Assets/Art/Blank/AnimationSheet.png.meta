@@ -362,11 +362,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_12
+      name: run_1
       rect:
         serializedVersion: 2
         x: 103
-        y: 95
+        y: 96
         width: 11
         height: 17
       alignment: 0
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_13
+      name: run_2
       rect:
         serializedVersion: 2
         x: 127
@@ -404,11 +404,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_14
+      name: run_3
       rect:
         serializedVersion: 2
         x: 152
-        y: 95
+        y: 96
         width: 10
         height: 17
       alignment: 0
@@ -425,7 +425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_15
+      name: run_4
       rect:
         serializedVersion: 2
         x: 176
@@ -614,11 +614,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_24
+      name: jump_0
       rect:
         serializedVersion: 2
         x: 7
-        y: 47
+        y: 48
         width: 10
         height: 17
       alignment: 0
@@ -635,11 +635,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_25
+      name: jump_1
       rect:
         serializedVersion: 2
         x: 31
-        y: 45
+        y: 48
         width: 10
         height: 17
       alignment: 0
@@ -656,13 +656,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_26
+      name: jump_2
       rect:
         serializedVersion: 2
         x: 55
-        y: 49
+        y: 48
         width: 10
-        height: 17
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -677,13 +677,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_27
+      name: jump_3
       rect:
         serializedVersion: 2
         x: 79
-        y: 51
+        y: 48
         width: 10
-        height: 17
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -698,13 +698,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_28
+      name: jump_4
       rect:
         serializedVersion: 2
         x: 103
-        y: 49
+        y: 48
         width: 10
-        height: 17
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -719,13 +719,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_29
+      name: jump_5
       rect:
         serializedVersion: 2
         x: 127
-        y: 47
+        y: 48
         width: 10
-        height: 16
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -740,11 +740,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_30
+      name: jump_6
       rect:
         serializedVersion: 2
         x: 151
-        y: 45
+        y: 48
         width: 10
         height: 17
       alignment: 0
@@ -761,11 +761,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_31
+      name: jump_7
       rect:
         serializedVersion: 2
         x: 175
-        y: 47
+        y: 48
         width: 10
         height: 17
       alignment: 0
@@ -1004,10 +1004,6 @@ TextureImporter:
     nameFileIdTable:
       AnimationSheet_10: 1808385267
       AnimationSheet_11: -1719857523
-      AnimationSheet_12: 489143927
-      AnimationSheet_13: 1711352264
-      AnimationSheet_14: -104012871
-      AnimationSheet_15: 1623080320
       AnimationSheet_16: -883722559
       AnimationSheet_17: 1751964883
       AnimationSheet_18: 746618415
@@ -1017,15 +1013,7 @@ TextureImporter:
       AnimationSheet_21: -1677949805
       AnimationSheet_22: 1680659087
       AnimationSheet_23: 250698274
-      AnimationSheet_24: -1276376193
-      AnimationSheet_25: 1168366758
-      AnimationSheet_26: 1764726285
-      AnimationSheet_27: -964706659
-      AnimationSheet_28: -1075839156
-      AnimationSheet_29: 2113863121
       AnimationSheet_3: -864759458
-      AnimationSheet_30: 418263055
-      AnimationSheet_31: -1706345168
       AnimationSheet_32: 871814695
       AnimationSheet_33: -343934082
       AnimationSheet_34: -1287093966
@@ -1044,6 +1032,18 @@ TextureImporter:
       AnimationSheet_9: 550891800
       Idle_0: 1353745251
       Idle_1: 1180887696
+      jump_0: -1276376193
+      jump_1: 1168366758
+      jump_2: 1764726285
+      jump_3: -964706659
+      jump_4: -1075839156
+      jump_5: 2113863121
+      jump_6: 418263055
+      jump_7: -1706345168
+      run_1: 489143927
+      run_2: 1711352264
+      run_3: -104012871
+      run_4: 1623080320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

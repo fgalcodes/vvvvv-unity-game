@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool _top = true;
 
     private Rigidbody2D _rb;
+    private Animator _anim;
 
     public static bool IsGrounded;
     public Transform groundCheck;
@@ -27,13 +28,18 @@ public class PlayerController : MonoBehaviour
     // Counter de flips
     public static bool IsFlipping;
     public static int CounterFlips;
+    
+    // Animation States
+    private static readonly int IsRunning = Animator.StringToHash("isRunning");
+    private static readonly int IsJumping = Animator.StringToHash("isJumping");
 
     // Start is called before the first frame update
     void Start()
     {
         _extraJumps = _extraJumpsValue;
         _rb = GetComponent<Rigidbody2D>();
-
+        _anim = GetComponent<Animator>();
+        
     }
 
     private void FixedUpdate()
@@ -44,7 +50,10 @@ public class PlayerController : MonoBehaviour
 
         _rb.velocity = new Vector2(moveInput * speed, _rb.velocity.y);
 
-        if (_facingRight == false && moveInput > 0)
+        _anim.SetBool(IsRunning, moveInput != 0f);
+        _anim.SetBool(IsJumping, _rb.velocity.y > 1f);
+
+        if (!_facingRight && moveInput > 0)
         {
             FlipHorizontally();
         }
@@ -52,7 +61,6 @@ public class PlayerController : MonoBehaviour
         {
             FlipHorizontally();
         }
-      
     }
 
     // Update is called once per frame
@@ -64,7 +72,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.identity;
             CounterFlips = 0;
             IsFlipping = false;
-        } else
+        } 
+        else
         {
             IsFlipping = true;
             FlipCounter();
@@ -72,6 +81,8 @@ public class PlayerController : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps > 0)
         {
+            // _anim.SetBool("isJumping", true);
+            
             if (_top == false)
             {
                 _rb.velocity = Vector2.up * jumpForce;
@@ -84,6 +95,8 @@ public class PlayerController : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps == 0 && IsGrounded)
         {
+            // _anim.SetBool("isJumping", true);
+
             if (_top == false) _rb.velocity = Vector2.up * jumpForce;
             if (_top) _rb.velocity = Vector2.down * -jumpForce;
         }
@@ -102,7 +115,6 @@ public class PlayerController : MonoBehaviour
         Vector3 scaler = _rb.transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
-
     }
     void FlipVertically()
     {
