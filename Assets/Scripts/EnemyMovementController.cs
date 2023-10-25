@@ -13,16 +13,25 @@ public class EnemyMovementController : MonoBehaviour
 
     private void Update()
     {
-        float step = constantSpeed * Time.deltaTime;
-        enemy.position = Vector2.MoveTowards(enemy.position, currentMovementTarget(), step);
+        try
+        {
+            float step = constantSpeed * Time.deltaTime;
+            enemy.position = Vector2.MoveTowards(enemy.position, currentMovementTarget(), step);
 
-        if (Vector2.Distance(enemy.position, endPosition.position) < 0.01f)
-        {
-            SwapTargets();
+            if (Vector2.Distance(enemy.position, endPosition.position) < 0.01f)
+            {
+                SwapTargets();
+            }
+            else if (Vector2.Distance(enemy.position, startPosition.position) < 0.01f)
+            {
+                SwapTargets();
+            }
+
         }
-        else if (Vector2.Distance(enemy.position, startPosition.position) < 0.01f)
+        catch (System.Exception)
         {
-            SwapTargets();
+
+        
         }
     }
 

@@ -5,14 +5,17 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpForce = 10f;
+    private int specialFlipAttack = 1;
 
     public float moveInput;
     private bool _facingRight = true;
     private bool _facingUp;
     private bool _top = true;
 
+
     private Rigidbody2D _rb;
     private Animator _anim;
+    private GameObject[] _enemies;
 
     public static bool IsGrounded;
     public Transform groundCheck;
@@ -28,7 +31,7 @@ public class PlayerController : MonoBehaviour
     // Counter de flips
     public static bool IsFlipping;
     public static int CounterFlips;
-    
+
     // Animation States
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
     private static readonly int IsJumping = Animator.StringToHash("isJumping");
@@ -40,7 +43,7 @@ public class PlayerController : MonoBehaviour
         _extraJumps = _extraJumpsValue;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        
+        _enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     private void FixedUpdate()
@@ -73,7 +76,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.identity;
             CounterFlips = 0;
             IsFlipping = false;
-        } 
+        }
         else
         {
             IsFlipping = true;
@@ -83,14 +86,14 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumps > 0)
         {
             // _anim.SetBool("isJumping", true);
-            
+
             if (_top == false)
             {
                 _rb.velocity = Vector2.up * jumpForce;
             }
-                
-            if (_top) _rb.velocity = Vector2.down * -jumpForce;   
-            
+
+            if (_top) _rb.velocity = Vector2.down * -jumpForce;
+
             _extraJumps--;
         }
 
@@ -102,7 +105,7 @@ public class PlayerController : MonoBehaviour
             if (_top) _rb.velocity = Vector2.down * -jumpForce;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             _rb.gravityScale *= -1;
             FlipVertically();
@@ -134,18 +137,18 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 break;
             case "PreviousLevel":
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                 break;
             case "Bullet":
             case "Enemy":
                 _currentLevel = SceneManager.GetActiveScene().buildIndex;
                 StaticData.CurrentLevel = _currentLevel;
-                
+
                 if (IsGrounded)
                 {
-                    _rb.bodyType = RigidbodyType2D.Static; 
+                    _rb.bodyType = RigidbodyType2D.Static;
                     _anim.SetTrigger(SetDeath);
-                    
+
                 }
                 else
                 {
@@ -169,7 +172,7 @@ public class PlayerController : MonoBehaviour
         // Flips
         float currentRotation = transform.rotation.z;
         if (currentRotation < 0) currentRotation *= -1;
-        
+
         //Debug.Log(currentRotation);
         if (currentRotation >= 0.9)
         {
@@ -177,6 +180,30 @@ public class PlayerController : MonoBehaviour
             rotation = Quaternion.Euler(new Vector3(rotation.x, rotation.y, 0f));
             transform.rotation = rotation;
             CounterFlips++;
+
+            if (CounterFlips > specialFlipAttack)
+            {
+                Debug.Log("Kill!");
+
+
+                foreach (GameObject enemy in _enemies)
+                {
+                    if (enemy == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (enemy.GetComponent<Renderer>().isVisible)
+                        {
+                            Destroy(enemy);
+
+                        }
+                    }
+
+                    Debug.Log(enemy.GetComponent<Renderer>().isVisible);
+                }
+            }
 
             // Debug.Log(CounterFlips);
         }
