@@ -866,7 +866,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_36
+      name: death_0
       rect:
         serializedVersion: 2
         x: 103
@@ -887,13 +887,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_37
+      name: death_1
       rect:
         serializedVersion: 2
         x: 128
         y: 24
         width: 10
-        height: 16
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -908,13 +908,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_38
+      name: death_2
       rect:
         serializedVersion: 2
         x: 152
         y: 24
         width: 13
-        height: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -929,13 +929,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_39
+      name: death_3
       rect:
         serializedVersion: 2
         x: 176
-        y: 23
+        y: 24
         width: 15
-        height: 9
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1018,10 +1018,6 @@ TextureImporter:
       AnimationSheet_33: -343934082
       AnimationSheet_34: -1287093966
       AnimationSheet_35: 850667959
-      AnimationSheet_36: -724788539
-      AnimationSheet_37: 681929530
-      AnimationSheet_38: 1062972902
-      AnimationSheet_39: -1599371537
       AnimationSheet_4: 985136894
       AnimationSheet_40: 143760789
       AnimationSheet_41: -410811394
@@ -1032,6 +1028,10 @@ TextureImporter:
       AnimationSheet_9: 550891800
       Idle_0: 1353745251
       Idle_1: 1180887696
+      death_0: -724788539
+      death_1: 681929530
+      death_2: 1062972902
+      death_3: -1599371537
       jump_0: -1276376193
       jump_1: 1168366758
       jump_2: 1764726285

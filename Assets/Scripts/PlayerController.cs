@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     // Animation States
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
     private static readonly int IsJumping = Animator.StringToHash("isJumping");
+    private static readonly int SetDeath = Animator.StringToHash("setDeath");
 
     // Start is called before the first frame update
     void Start()
@@ -139,14 +140,26 @@ public class PlayerController : MonoBehaviour
             case "Enemy":
                 _currentLevel = SceneManager.GetActiveScene().buildIndex;
                 StaticData.CurrentLevel = _currentLevel;
-                LoadGameOver();
+                
+                if (IsGrounded)
+                {
+                    _rb.bodyType = RigidbodyType2D.Static; 
+                    _anim.SetTrigger(SetDeath);
+                    
+                }
+                else
+                {
+                    Destroy(gameObject);
+                    LoadGameOver();
+                }
+                // LoadGameOver();
                 break;
         }
     }
 
-    void LoadGameOver()
+    private void LoadGameOver()
     {
-        Destroy(gameObject);
+        // Destroy(gameObject);
         StaticData.GameOver = true;
         SceneManager.LoadScene(0);
     }

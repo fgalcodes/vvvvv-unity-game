@@ -77,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -89,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -101,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -113,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -2145,114 +2149,114 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ws_Grave_Clock: -1426192919
-      Ws_Silkworm: -2000614781
-      Ws_Nosferatu: 148825823
-      Ws_Grave_Spear: -131757725
-      Ws_Bush: 2091167832
-      Ws_W_16: -1493503982
-      Ws_W_22: 1969528608
-      Ws_Tree_M: -681453098
-      Ws_W: -1722385726
-      Ws_Sir: 1677773111
-      Ws_Lasy: -2065360001
-      Ws_W_02: 571298519
-      Ws_Tree_S: 860594608
-      Ws_Prop_00: 1903337962
-      Ws_Sward: 1128619221
-      1Bit_68: -1380553452
-      Ws_Book: -1542649304
-      Ws_U: -1020366435
-      Ws_Poition_A: 175697479
-      Ws_Hand: -807790066
-      Ws_Poition_B: 289291269
-      Ws_W_01: -1737214882
-      Ws_Ladder: 1816233798
-      Ws_W_19: 739757935
-      Ws_Insane: 1724456180
-      Ws_Bird: -863810299
-      Ws_Prop_04: -2108037291
-      Ws_Prop_01: 1097636390
-      1Bit_65: 1733685744
-      Ws_W_10: -1920850529
-      Ws_Rogue: -1460147541
-      Ws_W_07: 591949968
-      Ws_W_14: 1273272113
-      Ws_C: 1787751769
-      Ws_Dagger: -1142584278
-      1Bit_69: -1661688997
-      Ws_W_03: 1356595663
-      Ws_Grave_B: 1816909570
-      Ws_W_15: 1693833590
-      Ws_Heart: -1480880147
-      Ws_Bulb: -532019147
-      1Bit_72: 1898351184
-      Ws_Block: -459445948
-      Ws_Baby: 901169581
-      1Bit_71: -1708183807
-      Ws_Mister: 1891772083
-      Ws_Wolf: 1936497647
-      Ws_Prop_02: 2004300008
-      Ws_Rock_S: -1438719138
-      Ws_W_11: -1457505381
-      Ws_Rock_M: -819522835
-      White Scape_7: 1874352240
-      Ws_Chest: -812244397
-      Ws_Square: 2096193630
-      Ws_W_04: 1496602568
-      Ws_Monster: 1418492131
-      Ws_Poition_C: -1077482600
-      Ws_Tree_L: -1149436655
-      Ws_Snail: 1091166691
-      Ws_Rock_L: -2099262191
-      Ws_W_17: -1005143002
-      Ws_W_21: 880301966
-      Ws_Door: 202570049
-      Ws_W_00: -988975583
-      Ws_O: 461131079
-      Ws_Letter: -312140584
-      Ws_F: 303382167
-      Ws_Tree_D: 832363127
-      Ws_K: 103434230
-      Ws_W_05: 849161538
-      Ws_Key: -452538264
-      Ws_P: 1148063047
-      Ws_W_08: 198330009
-      Ws_Grave_A: 1953424252
-      Ws_Prop_06: -335139170
-      Ws_Prop_03: -605605088
-      Ws_W_12: 573744548
-      1Bit_63: -1723784528
-      Ws_W_20: 1273553897
-      Ws_Cat: 1817797080
       1Bit_62: -554549752
-      Ws_W_18: 124695823
-      Ws_Lock: 2057313337
-      Ws_Shadow: 580378727
-      1Bit_70: 418776817
-      1Bit_66: -1896344819
-      Ws_W_06: 347352016
-      Ws_W_23: -339810724
-      Ws_Grave_C: -462742546
-      Ws_Coin: 402605497
-      Ws_W_09: 1069497792
-      Ws_Blubman: 1706258842
-      Ws_Spear: 1550783221
-      Ws_Law: -1066010435
-      Ws_Scum: -484290740
-      Ws_Ghost: 1363377880
-      Ws_Bow: 1955507556
-      1Bit_67: -1272540990
-      Ws_Prop_05: -815117035
+      1Bit_63: -1723784528
       1Bit_64: -882207349
-      Ws_Shroom: -1228736445
-      Ws_Log: 1850938453
-      Ws_W_24: -1532627825
-      Ws_Slim: -777030297
-      Ws_Note: 1877536116
-      Ws_W_13: 1116525225
-      Ws_Slime: -2134287456
+      1Bit_65: 1733685744
+      1Bit_66: -1896344819
+      1Bit_67: -1272540990
+      1Bit_68: -1380553452
+      1Bit_69: -1661688997
+      1Bit_70: 418776817
+      1Bit_71: -1708183807
+      1Bit_72: 1898351184
+      White Scape_7: 1874352240
+      Ws_Baby: 901169581
+      Ws_Bird: -863810299
+      Ws_Block: -459445948
+      Ws_Blubman: 1706258842
+      Ws_Book: -1542649304
       Ws_Boulder: 1460250681
+      Ws_Bow: 1955507556
+      Ws_Bulb: -532019147
+      Ws_Bush: 2091167832
+      Ws_C: 1787751769
+      Ws_Cat: 1817797080
+      Ws_Chest: -812244397
+      Ws_Coin: 402605497
+      Ws_Dagger: -1142584278
+      Ws_Door: 202570049
+      Ws_F: 303382167
+      Ws_Ghost: 1363377880
+      Ws_Grave_A: 1953424252
+      Ws_Grave_B: 1816909570
+      Ws_Grave_C: -462742546
+      Ws_Grave_Clock: -1426192919
+      Ws_Grave_Spear: -131757725
+      Ws_Hand: -807790066
+      Ws_Heart: -1480880147
+      Ws_Insane: 1724456180
+      Ws_K: 103434230
+      Ws_Key: -452538264
+      Ws_Ladder: 1816233798
+      Ws_Lasy: -2065360001
+      Ws_Law: -1066010435
+      Ws_Letter: -312140584
+      Ws_Lock: 2057313337
+      Ws_Log: 1850938453
+      Ws_Mister: 1891772083
+      Ws_Monster: 1418492131
+      Ws_Nosferatu: 148825823
+      Ws_Note: 1877536116
+      Ws_O: 461131079
+      Ws_P: 1148063047
+      Ws_Poition_A: 175697479
+      Ws_Poition_B: 289291269
+      Ws_Poition_C: -1077482600
+      Ws_Prop_00: 1903337962
+      Ws_Prop_01: 1097636390
+      Ws_Prop_02: 2004300008
+      Ws_Prop_03: -605605088
+      Ws_Prop_04: -2108037291
+      Ws_Prop_05: -815117035
+      Ws_Prop_06: -335139170
+      Ws_Rock_L: -2099262191
+      Ws_Rock_M: -819522835
+      Ws_Rock_S: -1438719138
+      Ws_Rogue: -1460147541
+      Ws_Scum: -484290740
+      Ws_Shadow: 580378727
+      Ws_Shroom: -1228736445
+      Ws_Silkworm: -2000614781
+      Ws_Sir: 1677773111
+      Ws_Slim: -777030297
+      Ws_Slime: -2134287456
+      Ws_Snail: 1091166691
+      Ws_Spear: 1550783221
+      Ws_Square: 2096193630
+      Ws_Sward: 1128619221
+      Ws_Tree_D: 832363127
+      Ws_Tree_L: -1149436655
+      Ws_Tree_M: -681453098
+      Ws_Tree_S: 860594608
+      Ws_U: -1020366435
+      Ws_W: -1722385726
+      Ws_W_00: -988975583
+      Ws_W_01: -1737214882
+      Ws_W_02: 571298519
+      Ws_W_03: 1356595663
+      Ws_W_04: 1496602568
+      Ws_W_05: 849161538
+      Ws_W_06: 347352016
+      Ws_W_07: 591949968
+      Ws_W_08: 198330009
+      Ws_W_09: 1069497792
+      Ws_W_10: -1920850529
+      Ws_W_11: -1457505381
+      Ws_W_12: 573744548
+      Ws_W_13: 1116525225
+      Ws_W_14: 1273272113
+      Ws_W_15: 1693833590
+      Ws_W_16: -1493503982
+      Ws_W_17: -1005143002
+      Ws_W_18: 124695823
+      Ws_W_19: 739757935
+      Ws_W_20: 1273553897
+      Ws_W_21: 880301966
+      Ws_W_22: 1969528608
+      Ws_W_23: -339810724
+      Ws_W_24: -1532627825
+      Ws_Wolf: 1936497647
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
