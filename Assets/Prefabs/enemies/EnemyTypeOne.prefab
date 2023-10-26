@@ -132,3 +132,4 @@ MonoBehaviour:
   bullet: {fileID: 919795099383154393, guid: 5abf7c218e7188c43a7a10f679da9b62, type: 3}
   bulletPos: {fileID: 9030260143858096375}
   bulletRange: 14
+  shootFX: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}

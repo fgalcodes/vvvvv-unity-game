@@ -7,7 +7,8 @@ public class EnemyBullet : MonoBehaviour
     private float _timer;
 
     [SerializeField] private float force = 5;
-    
+    [SerializeField] private AudioClip shootFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,10 @@ public class EnemyBullet : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Enemy"))
         {
+            if (gameObject.GetComponent<Renderer>().isVisible)
+            {
+                SoundManager.Instance.PlaySound(shootFX);
+            }
             Destroy(gameObject);
         }
     }

@@ -3,24 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    [SerializeField] private AudioSource soundNewGame;
+    [SerializeField] private AudioClip startFx;
+    [SerializeField] private AudioClip closeFx;
 
     public void NewGame()
     {
-        soundNewGame.Play();
-        
-        // call the function after 2s
-        Invoke("LoadScene", .5f);
+        SoundManager.Instance.PlaySound(startFx);
+        StaticData.GameOver = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void CloseGame()
     {
+        SoundManager.Instance.PlaySound(closeFx);
         Application.Quit();
-    }
-
-    private void LoadScene()
-    {
-        StaticData.GameOver = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

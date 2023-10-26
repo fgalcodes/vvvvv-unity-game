@@ -5,8 +5,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpForce = 10f;
-    [SerializeField] private AudioSource[] soundFx = new AudioSource[4];
-    private int specialFlipAttack = 1;
+    [SerializeField] private AudioClip[] soundFx = new AudioClip[4];
+    
+    private int _specialFlipAttack = 1;
 
     public float moveInput;
     private bool _facingRight = true;
@@ -136,15 +137,16 @@ public class PlayerController : MonoBehaviour
         switch (collision.tag)
         {
             case "NextLevel":
-                // soundFx[1].Play();
+                SoundManager.Instance.PlaySound(soundFx[0]);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 break;
             case "PreviousLevel":
+                SoundManager.Instance.PlaySound(soundFx[1]);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                 break;
             case "Bullet":
             case "Enemy":
-                soundFx[0].Play();
+                SoundManager.Instance.PlaySound(soundFx[2]);
                 
                 _currentLevel = SceneManager.GetActiveScene().buildIndex;
                 StaticData.CurrentLevel = _currentLevel;
@@ -172,6 +174,7 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public void FlipCounter()
     {
         // Flips
@@ -181,16 +184,16 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(currentRotation);
         if (currentRotation >= 0.9)
         {
+            SoundManager.Instance.PlaySound(soundFx[3]);
+            
             var rotation = transform.rotation;
             rotation = Quaternion.Euler(new Vector3(rotation.x, rotation.y, 0f));
             transform.rotation = rotation;
             CounterFlips++;
 
-            if (CounterFlips > specialFlipAttack)
+            if (CounterFlips > _specialFlipAttack)
             {
-                Debug.Log("Kill!");
-
-
+                // Debug.Log("Kill!");
                 foreach (GameObject enemy in _enemies)
                 {
                     if (enemy == null)
@@ -202,7 +205,6 @@ public class PlayerController : MonoBehaviour
                         if (enemy.GetComponent<Renderer>().isVisible)
                         {
                             Destroy(enemy);
-
                         }
                     }
 

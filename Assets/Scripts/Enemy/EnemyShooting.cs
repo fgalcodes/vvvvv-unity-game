@@ -34,6 +34,7 @@ public class EnemyShooting : MonoBehaviour
         }
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     void Shoot()
     {
         Instantiate(bullet, bulletPos.position, Quaternion.identity);
