@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private AudioClip[] soundFx = new AudioClip[4];
@@ -40,9 +42,24 @@ public class PlayerController : MonoBehaviour
     private static readonly int SetDeath = Animator.StringToHash("setDeath");
     private static readonly int SetDeathAir = Animator.StringToHash("setDeathAir");
 
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
+        SpawnManager.Instance.SpawnPlayer("Spawn", 0);
+
         _extraJumps = _extraJumpsValue;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
