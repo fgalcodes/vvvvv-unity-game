@@ -171,6 +171,7 @@ public class PlayerController : MonoBehaviour
     {
         // Destroy(gameObject);
         StaticData.GameOver = true;
+        SoundManager.Instance.StopBGM();
         SceneManager.LoadScene(0);
     }
 

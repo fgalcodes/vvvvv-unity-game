@@ -15,6 +15,7 @@ public class PauseManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             TogglePause();
+            SoundManager.Instance.ToogleMusic();
         }
     }
 
