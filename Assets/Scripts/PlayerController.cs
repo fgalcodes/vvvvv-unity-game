@@ -58,10 +58,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         
-        if (GameManager.Instance.isBack == true)
+        if (LevelManager.Instance.isBack == true)
         {
             transform.position = SpawnPointBack;
-            GameManager.Instance.isBack = false;
+            LevelManager.Instance.isBack = false;
         }
     }
 
@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
             case "PreviousLevel":
                 SoundManager.Instance.PlaySound(soundFx[1]);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-                GameManager.Instance.isBack = true;
+                LevelManager.Instance.isBack = true;
                 break;
             case "Bullet":
             case "Enemy":
