@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     public static bool IsFlipping;
     public static int CounterFlips;
 
+    //SpawnPointBack
+    public Vector2 SpawnPointBack;
+
     // Animation States
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
     private static readonly int IsJumping = Animator.StringToHash("isJumping");
@@ -45,25 +48,21 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        SpawnManager.Instance.SpawnPlayer("Spawn", 0);
-
         _extraJumps = _extraJumpsValue;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+        if (GameManager.Instance.isBack == true)
+        {
+            transform.position = SpawnPointBack;
+            GameManager.Instance.isBack = false;
+        }
     }
 
     private void FixedUpdate()
@@ -160,6 +159,7 @@ public class PlayerController : MonoBehaviour
             case "PreviousLevel":
                 SoundManager.Instance.PlaySound(soundFx[1]);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                GameManager.Instance.isBack = true;
                 break;
             case "Bullet":
             case "Enemy":
