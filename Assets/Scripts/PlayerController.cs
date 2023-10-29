@@ -226,7 +226,7 @@ public class PlayerController : MonoBehaviour
                         }
                     }
 
-                    Debug.Log(enemy.GetComponent<Renderer>().isVisible);
+                    // Debug.Log(enemy.GetComponent<Renderer>().isVisible);
                 }
             }
 

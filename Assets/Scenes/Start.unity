@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 239997271}
   - component: {fileID: 239997270}
   - component: {fileID: 239997269}
-  - component: {fileID: 239997268}
+  - component: {fileID: 239997272}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -367,20 +367,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -73.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &239997268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239997266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1587ba49233193347a00321ee44a84fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startFx: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
-  closeFx: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
 --- !u!114 &239997269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +411,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 239997268}
+      - m_Target: {fileID: 239997272}
         m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
         m_MethodName: CloseGame
         m_Mode: 1
@@ -475,6 +461,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239997266}
   m_CullTransparentMesh: 1
+--- !u!114 &239997272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239997266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1587ba49233193347a00321ee44a84fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startFx: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
+  closeFx: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
 --- !u!1 &666046433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startFx: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
-  closeFx: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
+  closeFx: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
 --- !u!1 &1733454187
 GameObject:
   m_ObjectHideFlags: 0
