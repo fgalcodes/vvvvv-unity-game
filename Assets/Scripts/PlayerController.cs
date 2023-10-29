@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         
-        if (LevelManager.Instance.isBack == true)
+        if (LevelManager.Instance.isBack)
         {
             transform.position = SpawnPointBack;
             LevelManager.Instance.isBack = false;
