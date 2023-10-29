@@ -727,7 +727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1919733401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4963,10 +4963,6 @@ PrefabInstance:
     - target: {fileID: 2304759771271876051, guid: 06b26e44b544e4348b25718a8642dc0a, type: 3}
       propertyPath: SpawnPointBack.y
       value: 0.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 2304759771271876051, guid: 06b26e44b544e4348b25718a8642dc0a, type: 3}
-      propertyPath: specialFlipAttack
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

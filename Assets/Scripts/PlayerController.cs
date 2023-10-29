@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private int _currentLevel;
 
     private int _extraJumps;
-    private int _extraJumpsValue = 2;
+    private int _extraJumpsValue = 1;
 
 
     // Counter de flips
