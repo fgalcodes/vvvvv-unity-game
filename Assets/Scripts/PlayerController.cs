@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController Instance;
-
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private AudioClip[] soundFx = new AudioClip[4];
