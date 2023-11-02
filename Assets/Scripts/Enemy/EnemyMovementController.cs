@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
 using UnityEngine;
 
 public class EnemyMovementController : MonoBehaviour
@@ -16,7 +13,7 @@ public class EnemyMovementController : MonoBehaviour
         try
         {
             float step = constantSpeed * Time.deltaTime;
-            enemy.position = Vector2.MoveTowards(enemy.position, currentMovementTarget(), step);
+            enemy.position = Vector2.MoveTowards(enemy.position, CurrentMovementTarget(), step);
 
             if (Vector2.Distance(enemy.position, endPosition.position) < 0.01f)
             {
@@ -28,14 +25,13 @@ public class EnemyMovementController : MonoBehaviour
             }
 
         }
-        catch (System.Exception)
-        {
+        catch (System.Exception) {
 
         
         }
     }
 
-    Vector2 currentMovementTarget()
+    Vector2 CurrentMovementTarget()
     {
         if (Vector2.Distance(enemy.position, startPosition.position) < 0.01f)
         {
