@@ -189,7 +189,7 @@ public class PlayerController : MonoBehaviour
         // Destroy(gameObject);
         StaticData.GameOver = true;
         SoundManager.Instance.StopBGM();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Game Over");
     }
 
     // ReSharper disable Unity.PerformanceAnalysis

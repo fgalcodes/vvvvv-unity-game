@@ -16,6 +16,6 @@ public class GameOverScreen : MonoBehaviour
     public void RestartGame()
     {
         SoundManager.Instance.PlaySound(quitFx);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(0);
     }
 }
