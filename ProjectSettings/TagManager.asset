@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - NextLevel
+  - PreviousLevel
+  - Bullet
+  - Enemy
+  - Spawn
   layers:
   - Default
   - TransparentFX
@@ -11,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -38,6 +43,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Back
+    uniqueID: 1520840135
+    locked: 0
+  - name: Middle
+    uniqueID: 744992365
+    locked: 0
+  - name: Front
+    uniqueID: 100547801
+    locked: 0
+  - name: Decoration
+    uniqueID: 2894409689
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
